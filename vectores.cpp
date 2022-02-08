@@ -31,8 +31,11 @@ int main()
             cout << "1. Suma de Vectores" << endl;
             cout << "2. Resta de Vectores" << endl;
             
-            cout << "Ingrese la opcion deseada" << endl;
+            cout << "\nIngrese la opcion deseada" << endl;
             cin >> jump;
+
+            if(jump == "1" || jump == "2")
+                break;
         }
         
         
@@ -53,9 +56,18 @@ int main()
         bx = vectorB * cos(radian(beta));
         by = vectorB * sin(radian(beta));
 
-        // Subtract Vectors
-        cx = ((ax)-(bx));
-        cy = ((ay)-(by));
+        // Option jump condition
+        if(jump == "1"){
+            // Add Vectors.
+            cx = ((ax)+(bx));
+            cy = ((ay)+(by));
+        }else if(jump == "2"){
+            // Subtract Vectors
+            cx = ((ax)-(bx));
+            cy = ((ay)-(by));
+        }
+
+        jump = "";
 
         //Calculate |C|
         vectC = pow(cx,2) + pow(cy,2);
@@ -63,7 +75,7 @@ int main()
 
         // Show Results
         system("cls");
-        cout << "========== Restar Vectores ==========\n" << endl;
+        cout << "========== Suma o Resta de Vectores ==========\n" << endl;
         cout << "A = " << ax << "i " << ay << "j" << endl;
         cout << "B = " << bx << "i " << by << "j" <<endl;
         cout << "--------------------------------" << endl;
