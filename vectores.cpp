@@ -5,9 +5,10 @@
 
 using namespace std;
 
-// Const Definition
+// Const Definition.
 const double PI = 3.1416;
 
+// Radian converter.
 double radian(double degrees)
 {
 	return(degrees * PI) / 180;
@@ -18,8 +19,8 @@ int main()
     while(true)
     {
         // Variable Definition
-        double vectorA = 14, vectorB = 75, vectorC, vectC;
-        double alpha = 308, beta = 336;
+        double vectorA, vectorB, vectorC, vectC;
+        double alpha, beta;
         double ax, ay, bx, by, cx, cy;
         string jump;
         
