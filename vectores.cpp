@@ -6,10 +6,10 @@
 using namespace std;
 
 // Const Definition.
-const float PI = 3.1516f;
+const float PI = 3.14159265359f;
 
 // Radian converter.
-double radian(double degrees)
+float radian(float degrees)
 {
 	return(degrees * PI) / 180;
 }
