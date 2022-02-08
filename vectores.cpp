@@ -65,7 +65,7 @@ int main()
         bx = vectorB * cos(radian(beta));
         by = vectorB * sin(radian(beta));
 
-        // Option jump condition
+        // Option condition
         if(option == "1")
         {
             // Add Vectors.
