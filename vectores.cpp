@@ -14,6 +14,11 @@ float radian(float degrees)
 	return(degrees * PI) / 180;
 }
 
+float degrees(float radians)
+{
+	return(radians * 180) / PI;
+}
+
 int main() 
 {   
     system("cls");
@@ -21,9 +26,9 @@ int main()
     {
         // Variable Definition
         float vectorA, vectorB, vectorC, vectC;
-        float alpha, beta;
+        float alpha, beta, degreesVC;
         float ax, ay, bx, by, cx, cy;
-        string option;
+        string option = "2";
         
 
         // Request Data.
@@ -33,7 +38,7 @@ int main()
             cout << "1. Suma de Vectores" << endl;
             cout << "2. Resta de Vectores" << endl;
             
-            cout << "\nIngrese la opcion deseada" << endl;
+            cout << "\nIngrese la opcion deseada: ";
             cin >> option;
 
             if(option == "1" || option == "2")
@@ -78,6 +83,10 @@ int main()
         vectC = pow(cx,2) + pow(cy,2);
         vectorC = sqrt(vectC);
 
+        // Calculate vector C degrees
+        degreesVC = atan(cy/cx);
+        degreesVC = degrees(degreesVC);
+
         // Show Results
         system("cls");
         cout << "========== Suma o Resta de Vectores ==========\n" << endl;
@@ -94,8 +103,9 @@ int main()
         cout << "|C| = " << vectorC << endl;
 
         cout << "\n========== Calcular Angulo De C ==========\n" << endl;
-        cout << "\nCalcule el anuglo manualmente, con la formula Tan-1(cy/cx)"<<endl;
+        cout << degreesVC << endl;
 
+        cout << "\n==========================================" << endl;
         cout << "\nIngrese Cualquier letra para hacer otro problema..."<<endl;
         cin >> option;
         system("cls");
