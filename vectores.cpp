@@ -28,7 +28,7 @@ int main()
         float vectorA, vectorB, vectorC, vectC;
         float alpha, beta, degreesVC;
         float ax, ay, bx, by, cx, cy;
-        string option = "2";
+        string option;
         
 
         // Request Data.
@@ -42,7 +42,9 @@ int main()
             cin >> option;
 
             if(option == "1" || option == "2")
+            system("cls");
                 break;
+            system("cls");
         }
         
         
