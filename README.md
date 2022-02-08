@@ -11,11 +11,11 @@ Suma y Resta dos vectores (A y B) para crear el vector resultante (C), muestra e
 - Sumamos ambas cantidades.
 - Sacamos raíz cuadrada.
 
-### Calcular Angulo de C (Función Aun no añadida).
-Se necesita ayuda para esto, ya que con la función de "atan()", no da el resultado esperado.
+### Calcular Angulo de C.
 - Utilizamos cualquiera de las siguientes formulas:
   - Tang-1(Cy/Cx).
   - arctan(Cy/Cx).
+  - atan(Cy/Cx)
 
 # Funcionamiento del programa.
 Este es un programa echo con C++, es decir que una vez compilado se puede ejecutar el archivo ".exe", **este mismo funciona 100% y unicamente por consola o terminal de windows por el momento**.
