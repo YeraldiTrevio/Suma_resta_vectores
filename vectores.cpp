@@ -15,14 +15,15 @@ double radian(double degrees)
 }
 
 int main() 
-{
+{   
+    system("cls");
     while(true)
     {
         // Variable Definition
         float vectorA, vectorB, vectorC, vectC;
         float alpha, beta;
         float ax, ay, bx, by, cx, cy;
-        string jump;
+        string option;
         
 
         // Request Data.
@@ -33,9 +34,9 @@ int main()
             cout << "2. Resta de Vectores" << endl;
             
             cout << "\nIngrese la opcion deseada" << endl;
-            cin >> jump;
+            cin >> option;
 
-            if(jump == "1" || jump == "2")
+            if(option == "1" || option == "2")
                 break;
         }
         
@@ -58,20 +59,20 @@ int main()
         by = vectorB * sin(radian(beta));
 
         // Option jump condition
-        if(jump == "1")
+        if(option == "1")
         {
             // Add Vectors.
             cx = ((ax)+(bx));
             cy = ((ay)+(by));
         }
-        else if(jump == "2")
+        else if(option == "2")
         {
             // Subtract Vectors
             cx = ((ax)-(bx));
             cy = ((ay)-(by));
         }
 
-        jump = "";
+        option = "";
 
         //Calculate |C|
         vectC = pow(cx,2) + pow(cy,2);
@@ -96,7 +97,7 @@ int main()
         cout << "\nCalcule el anuglo manualmente, con la formula Tan-1(cy/cx)"<<endl;
 
         cout << "\nIngrese Cualquier letra para hacer otro problema..."<<endl;
-        cin >> jump;
+        cin >> option;
         system("cls");
     }
 	return 0;
