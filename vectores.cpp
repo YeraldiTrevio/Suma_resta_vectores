@@ -6,7 +6,7 @@
 using namespace std;
 
 // Const Definition.
-const double PI = 3.1416;
+const float PI = 3.1516f;
 
 // Radian converter.
 double radian(double degrees)
@@ -19,9 +19,9 @@ int main()
     while(true)
     {
         // Variable Definition
-        double vectorA, vectorB, vectorC, vectC;
-        double alpha, beta;
-        double ax, ay, bx, by, cx, cy;
+        float vectorA, vectorB, vectorC, vectC;
+        float alpha, beta;
+        float ax, ay, bx, by, cx, cy;
         string jump;
         
 
@@ -58,11 +58,14 @@ int main()
         by = vectorB * sin(radian(beta));
 
         // Option jump condition
-        if(jump == "1"){
+        if(jump == "1")
+        {
             // Add Vectors.
             cx = ((ax)+(bx));
             cy = ((ay)+(by));
-        }else if(jump == "2"){
+        }
+        else if(jump == "2")
+        {
             // Subtract Vectors
             cx = ((ax)-(bx));
             cy = ((ay)-(by));
