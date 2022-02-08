@@ -1,4 +1,4 @@
-# Suma_resta_vectores
+# Suma y resta de dos vectores.
 Suma y Resta dos vectores (A y B) para crear el vector resultante (C), muestra el resultado y el desarrollo del problema, no incluye resolucion del angulo.
 
 ## Pasos para la resta y suma de vectores
