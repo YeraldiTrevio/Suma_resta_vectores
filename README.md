@@ -18,7 +18,7 @@ Suma y Resta dos vectores (A y B) para crear el vector resultante (C), muestra e
   - atan(Cy/Cx)
 
 # Funcionamiento del programa.
-Este es un programa echo con C++, es decir que una vez compilado se puede ejecutar el archivo ".exe", *el programa funciona unicamente por consola, proximamente se estara lanzando una version web mas facíl de entender, tambien cabe destacar que el archivo .exe solamente se puede ejecutar en windows, aun que el codigo debería de poderse compilar en linux y/o mac sin ningun problema y con posiblemente con pocas modificaciones en el código**.
+Este es un programa echo con C++, es decir que una vez compilado se puede ejecutar el archivo ".exe", **el programa funciona unicamente por consola, proximamente se estara lanzando una version web mas facíl de entender, tambien cabe destacar que el archivo .exe solamente se puede ejecutar en windows, aun que el codigo debería de poderse compilar en linux y/o mac sin ningun problema y con posiblemente con pocas modificaciones en el código**.
 
 Una vez ejecutado el programa, este te pide que ingreses una opcion (1 o 2) para saber si haras una suma o resta de vectores, seguido de eso te pide rellenar los datos,**ATENCION: TRATA DE SIEMPRE PONER NUMEROS EN ESTA PARTE, DE LO CONTRARIO EL PROGRAMA PUEDE LANZAR UN ERROR**, déspues de haber ingresado los datos, el programa se encargara de lanzarte el resultado con el procedimiento, **no muestra como se descomponen los vectores por el momento, pero si muestra el resultado de la descomposición acomodado en la resta o suma**
 
