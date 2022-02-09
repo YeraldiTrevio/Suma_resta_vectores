@@ -2,6 +2,12 @@
 #include <string>
 using namespace std;
 
+// Clear console
+void clear()
+{
+    system("clear");
+}
+
 // Radian converter.
 float radian(float degrees, float PI)
 {
@@ -21,10 +27,10 @@ void showResult(float ax, float bx, float cx,
                 float vectorA, float vectorB,
                 float alpha, float beta)
 {
-    cout << "============ Informacion Ingresada ============\n" << endl;
-    cout << "\tA = " << vectorA << "        Alpha =   " << alpha <<endl;
-    cout << "\tB = " << vectorB << "        Beta =    " << beta <<endl;
-    cout << "\tC = " << vectorB << "        Angulo =  " << beta <<endl;
+    cout << "============= Vectores y Angulos =============\n" << endl;
+    cout << "\tA = " << vectorA << "        Alpha =   " << alpha<< endl;
+    cout << "\tB = " << vectorB << "        Beta =    " << beta << endl;
+    cout << "\tC = " << vectorB << "        Angulo =  " << degreesVC << endl;
     cout << "\n========== Suma o Resta de Vectores ==========\n" << endl;
     // Vector A
     if(cy > 0)
@@ -48,8 +54,8 @@ void showResult(float ax, float bx, float cx,
         cout << "\tC = " << cx << "i " << cy << "j" << endl;
 
     cout << "\n================ Calcular |C| ================\n" << endl;
-    printf("\t|C| = %c/(%f)%c (%f)%c\n",253, cx, 253, cy, 253);
-    cout << "\t|C| = " << vectorC << "°" <<endl;
+    printf("\t|C| = %c/(%2f)%c (%f)%c\n",253, cx, 253, cy, 253);
+    printf("\t|C| = %2f%c\n", vectorC, 248);
 
     cout << "\n============ Calcular Angulo De C ============\n" << endl;
     cout << "\tAngulo: " << degreesVC << endl;

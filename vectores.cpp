@@ -15,8 +15,7 @@ int main()
     float alpha = 0.0f, beta = 0.0f, degreesVC = 0.0f;
     float ax = 0.0f, ay = 0.0f, bx = 0.0f, by = 0.0f, cx = 0.0f, cy = 0.0f;
     string option;
-
-    system("cls");
+    clear();
     while(true)
     {
         // Request Data.
@@ -33,7 +32,7 @@ int main()
 
             if(option == "1" || option == "2")
             {
-                system("cls");
+                clear();
                 break;
             }
             else if(option == "3")
@@ -43,10 +42,11 @@ int main()
                             vectorA, vectorB, alpha, beta);
                 cout << "\nIngrese cualquier letra para continuar: ";
                 cin >> option;
+                clear();
             }
             else if(option == "4")
             {
-                system("cls");
+                clear();
                 showResult( ax, bx, cx, ay, by, cy, 
                             vectorC, degreesVC, 
                             vectorA, vectorB, alpha, beta);
@@ -98,7 +98,7 @@ int main()
             degreesVC = degrees(degreesVC, PI);
 
             // Show Results
-            system("cls");
+            clear();
             showResult( ax, bx, cx, ay, by, cy, 
                             vectorC, degreesVC, 
                             vectorA, vectorB, alpha, beta);
@@ -112,7 +112,7 @@ int main()
             // Final option conditions 
             if(option == "4")
             {
-                system("cls");
+                clear();
                 showResult( ax, bx, cx, ay, by, cy, 
                             vectorC, degreesVC, 
                             vectorA, vectorB, alpha, beta);
@@ -120,10 +120,10 @@ int main()
             }
             else if(option == "5")
             {
-                system("cls");
+                clear();
                 break;
             }
-            system("cls");
+            clear();
         }
     }
 	return 0;
