@@ -2,115 +2,129 @@
 #include <string>
 #include <cmath>
 #include <cstdlib>
-
+#include "functions.cpp"
 using namespace std;
 
-// Const Definition.
+// Global Const Definition.
 const float PI = 3.14159265359f;
-
-// Radian converter.
-float radian(float degrees)
-{
-	return(degrees * PI) / 180;
-}
-
-float degrees(float radians)
-{
-	return(radians * 180) / PI;
-}
 
 int main() 
 {   
+    // Variable Definition
+    float vectorA = 0.0f, vectorB = 0.0f, vectorC = 0.0f, vectC = 0.0f;
+    float alpha = 0.0f, beta = 0.0f, degreesVC = 0.0f;
+    float ax = 0.0f, ay = 0.0f, bx = 0.0f, by = 0.0f, cx = 0.0f, cy = 0.0f;
+    string option;
+
     system("cls");
     while(true)
     {
-        // Variable Definition
-        float vectorA, vectorB, vectorC, vectC;
-        float alpha, beta, degreesVC;
-        float ax, ay, bx, by, cx, cy;
-        string option;
-        
-
         // Request Data.
         while (true)
         {
-            cout << "================== Opciones ===================" << endl;
+            cout << "\n================== Opciones ===================" << endl;
             cout << "1. Suma de Vectores" << endl;
             cout << "2. Resta de Vectores" << endl;
+            cout << "3. Mostrar resultado de la operacion anterior." << endl;
+            cout << "4. Salir." << endl;
             
             cout << "\nIngrese la opcion deseada: ";
             cin >> option;
 
             if(option == "1" || option == "2")
-            system("cls");
+            {
+                system("cls");
                 break;
+            }
+            else if(option == "3")
+            {
+                showResult( ax, bx, cx, ay, by, cy, 
+                            vectorC, degreesVC, 
+                            vectorA, vectorB, alpha, beta);
+                cout << "\nIngrese cualquier letra para continuar: ";
+                cin >> option;
+            }
+            else if(option == "4")
+            {
+                system("cls");
+                showResult( ax, bx, cx, ay, by, cy, 
+                            vectorC, degreesVC, 
+                            vectorA, vectorB, alpha, beta);
+                exit(1);
+            }
+        }
+
+        while(true)
+        {
+            cout << "\nIngresa la magnitud del Vector A: ";
+            cin >> vectorA;
+            cout << "Inserta el valor de alpha (Angulo del Vector): ";
+            cin >> alpha;
+
+            cout << "\nIngresa la magnitud del Vector B: ";
+            cin >> vectorB;
+            cout << "Inserta el valor de beta (Angulo del Vector): ";
+            cin >> beta;
+
+            // Descompose Vectors
+            ax = vectorA * cos(radian(alpha, PI));
+            ay = vectorA * sin(radian(alpha, PI));
+
+            bx = vectorB * cos(radian(beta, PI));
+            by = vectorB * sin(radian(beta, PI));
+
+            // Option condition
+            if(option == "1")
+            {
+                // Add Vectors.
+                cx = ((ax)+(bx));
+                cy = ((ay)+(by));
+            }
+            else if(option == "2")
+            {
+                // Subtract Vectors
+                cx = ((ax)-(bx));
+                cy = ((ay)-(by));
+            }
+
+            option = "";
+
+            //Calculate |C|
+            vectC = pow(cx,2) + pow(cy,2);
+            vectorC = sqrt(vectC);
+
+            // Calculate vector C degrees
+            degreesVC = atan(cy/cx);
+            degreesVC = degrees(degreesVC, PI);
+
+            // Show Results
+            system("cls");
+            showResult( ax, bx, cx, ay, by, cy, 
+                            vectorC, degreesVC, 
+                            vectorA, vectorB, alpha, beta);
+
+            // Final menu
+            cout << "\n===========================================" << endl;
+            cout << "\nIngrese Cualquier letra para hacer otro problema o ingrese"<<endl;
+            cout << "el numero '5' para elegir otra operacion y '4' para salir."<<endl;
+            cin >> option;
+
+            // Final option conditions 
+            if(option == "4")
+            {
+                system("cls");
+                showResult( ax, bx, cx, ay, by, cy, 
+                            vectorC, degreesVC, 
+                            vectorA, vectorB, alpha, beta);
+                exit(1);
+            }
+            else if(option == "5")
+            {
+                system("cls");
+                break;
+            }
             system("cls");
         }
-        
-        
-        cout << "Ingresa la magnitud del Vector A: ";
-        cin >> vectorA;
-        cout << "Inserta el valor de alpha (Angulo del Vector): ";
-        cin >> alpha;
-
-        cout << "\nIngresa la magnitud del Vector B: ";
-        cin >> vectorB;
-        cout << "Inserta el valor de beta (Angulo del Vector): ";
-        cin >> beta;
-
-        // Descompose Vectors
-        ax = vectorA * cos(radian(alpha));
-        ay = vectorA * sin(radian(alpha));
-
-        bx = vectorB * cos(radian(beta));
-        by = vectorB * sin(radian(beta));
-
-        // Option condition
-        if(option == "1")
-        {
-            // Add Vectors.
-            cx = ((ax)+(bx));
-            cy = ((ay)+(by));
-        }
-        else if(option == "2")
-        {
-            // Subtract Vectors
-            cx = ((ax)-(bx));
-            cy = ((ay)-(by));
-        }
-
-        option = "";
-
-        //Calculate |C|
-        vectC = pow(cx,2) + pow(cy,2);
-        vectorC = sqrt(vectC);
-
-        // Calculate vector C degrees
-        degreesVC = atan(cy/cx);
-        degreesVC = degrees(degreesVC);
-
-        // Show Results
-        system("cls");
-        cout << "========== Suma o Resta de Vectores ==========\n" << endl;
-        cout << "A = " << ax << "i " << ay << "j" << endl;
-        cout << "B = " << bx << "i " << by << "j" <<endl;
-        cout << "--------------------------------" << endl;
-        if(cy > 0)
-            cout << "C = " << cx << "i +" << cy << "j" << endl;
-        else
-            cout << "C = " << cx << "i " << cy << "j" << endl;
-
-        cout << "\n========== Calcular |C| ==========\n" << endl;
-        cout << "|C| = (Simbolo Raiz Cuadrada) " << "(" << cx << ")^2" << " + " << "(" << cy << ")^2" << endl;
-        cout << "|C| = " << vectorC << endl;
-
-        cout << "\n========== Calcular Angulo De C ==========\n" << endl;
-        cout << degreesVC << endl;
-
-        cout << "\n==========================================" << endl;
-        cout << "\nIngrese Cualquier letra para hacer otro problema..."<<endl;
-        cin >> option;
-        system("cls");
     }
 	return 0;
 }
