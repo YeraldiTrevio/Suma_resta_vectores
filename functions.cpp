@@ -33,13 +33,13 @@ void showResult(float ax, float bx, float cx,
     cout << "\tC = " << vectorB << "        Angulo =  " << degreesVC << endl;
     cout << "\n========== Suma o Resta de Vectores ==========\n" << endl;
     // Vector A
-    if(cy > 0)
+    if(ay > 0)
         cout << "\tA = " << ax << "i +" << ay << "j" << endl;
     else
         cout << "\tA = " << ax << "i " << ay << "j" << endl;
 
     // Vector B
-    if(cy > 0)
+    if(by > 0)
         cout << "\tA = " << ax << "i +" << ay << "j" << endl;
     else
         cout << "\tA = " << ax << "i " << ay << "j" << endl;
