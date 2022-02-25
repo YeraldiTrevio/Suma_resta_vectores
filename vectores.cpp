@@ -6,7 +6,7 @@
 using namespace std;
 
 // Global Const Definition.
-const float PI = 3.14159265359f;
+// const float PI = 3.14159265359f;
 
 int main() 
 {   
@@ -67,24 +67,24 @@ int main()
             cin >> beta;
 
             // Descompose Vectors
-            ax = vectorA * cos(radian(alpha, PI));
-            ay = vectorA * sin(radian(alpha, PI));
+            ax = cosDescompose(vectorA, alpha);
+            ay = sinDescompose(vectorA, alpha);
 
-            bx = vectorB * cos(radian(beta, PI));
-            by = vectorB * sin(radian(beta, PI));
+            bx = cosDescompose(vectorB, beta);
+            by = sinDescompose(vectorB, beta);
 
             // Option condition
             if(option == "1")
             {
                 // Add Vectors.
-                cx = ((ax)+(bx));
-                cy = ((ay)+(by));
+                cx = addVectorsX(ax, bx);
+                cy = addVectorsY(ay, by);
             }
             else if(option == "2")
             {
                 // Subtract Vectors
-                cx = ((ax)-(bx));
-                cy = ((ay)-(by));
+                cx = substractVectorsX(ax, bx);
+                cy = substractVectorsY(ay, by);
             }
 
             option = "";
@@ -95,7 +95,7 @@ int main()
 
             // Calculate vector C degrees
             degreesVC = atan(cy/cx);
-            degreesVC = degrees(degreesVC, PI);
+            degreesVC = degrees(degreesVC);
 
             // Show Results
             clear();

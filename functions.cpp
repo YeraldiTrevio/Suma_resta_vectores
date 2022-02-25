@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
+
+const float PI = 3.14159265359f;
 
 // Clear console
 void clear()
@@ -9,16 +12,51 @@ void clear()
 }
 
 // Radian converter.
-float radian(float degrees, float PI)
+float radian(float degrees)
 {
 	return(degrees * PI) / 180;
 }
 
 // Degrees Converter
-float degrees(float radians, float PI)
+float degrees(float radians)
 {
 	return(radians * 180) / PI;
 }
+
+// Descompose Vectors
+float cosDescompose(float vector, float degree)
+{
+    return vector*cos(radian(degree));
+}
+
+float sinDescompose(float vector, float degree)
+{
+    return vector*sin(radian(degree));
+}
+
+
+// Add Vectors
+float addVectorsX(float ax, float bx)
+{
+    return ((ax)+(bx));
+}
+
+float addVectorsY(float ay, float by)
+{
+    return ((ay)+(by));
+}
+
+float substractVectorsX(float ax, float bx)
+{
+    return ((ax)-(bx));
+}
+
+float substractVectorsY(float ay, float by)
+{
+    return ((ay)-(by));
+}
+
+// Susbract Vector
 
 // Show Results
 void showResult(float ax, float bx, float cx,
@@ -30,7 +68,8 @@ void showResult(float ax, float bx, float cx,
     cout << "============= Vectores y Angulos =============\n" << endl;
     cout << "\tA = " << vectorA << "        Alpha =   " << alpha<< endl;
     cout << "\tB = " << vectorB << "        Beta =    " << beta << endl;
-    cout << "\tC = " << vectorB << "        Angulo =  " << degreesVC << endl;
+    printf ("\tC = %.2f     Angulo =  %.2f\n",vectorC, degreesVC);
+
     cout << "\n========== Suma o Resta de Vectores ==========\n" << endl;
     // Vector A
     if(ay > 0)
@@ -40,9 +79,9 @@ void showResult(float ax, float bx, float cx,
 
     // Vector B
     if(by > 0)
-        cout << "\tA = " << ax << "i +" << ay << "j" << endl;
+        cout << "\tA = " << bx << "i +" << by << "j" << endl;
     else
-        cout << "\tA = " << ax << "i " << ay << "j" << endl;
+        cout << "\tA = " << bx << "i " << by << "j" << endl;
 
     // Line
     cout << "----------------------------------------------" << endl;
