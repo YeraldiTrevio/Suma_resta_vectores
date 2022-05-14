@@ -5,8 +5,6 @@
 #include "functions.cpp"
 using namespace std;
 
-// Global Const Definition.
-// const float PI = 3.14159265359f;
 
 int main() 
 {   
