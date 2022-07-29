@@ -19,6 +19,7 @@ int main()
         // Request Data.
         while (true)
         {
+            fflush(stdin);
             cout << "\n================== Opciones ===================" << endl;
             cout << "1. Suma de Vectores" << endl;
             cout << "2. Resta de Vectores" << endl;
@@ -54,6 +55,7 @@ int main()
 
         while(true)
         {
+            fflush(stdin);
             cout << "\nIngresa la magnitud del Vector A: ";
             cin >> vectorA;
             cout << "Inserta el valor de alpha (Angulo del Vector): ";
